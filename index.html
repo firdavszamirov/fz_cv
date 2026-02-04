@@ -19,11 +19,36 @@
       color: var(--text-color);
       line-height: 1.6;
       margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* 🔹 NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
     }
 
     header {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 6rem 1rem 3rem;
       background: var(--card-bg);
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
@@ -45,8 +70,8 @@
       color: var(--accent-color);
       margin: 0 8px;
       font-size: 1.3rem;
-      text-decoration: none;
       transition: 0.3s;
+      text-decoration: none;
     }
     .social a:hover {
       color: white;
@@ -55,10 +80,10 @@
     .download-btn {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       background: var(--accent-color);
       color: #0f172a;
-      border-radius: 5px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
@@ -69,10 +94,10 @@
 
     section {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       background: var(--card-bg);
       padding: 2rem;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
@@ -87,7 +112,6 @@
       list-style: none;
       padding-left: 0;
     }
-
     li {
       margin-bottom: 0.6rem;
     }
@@ -102,54 +126,91 @@
     a {
       color: var(--accent-color);
     }
+
+    /* 🔹 SCROLL TO TOP BUTTON */
+    #toTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      border: none;
+      color: #0f172a;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: 0.3s;
+      z-index: 999;
+    }
+    #toTop:hover {
+      background: #7dd3fc;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 🔹 TOP NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#volunteering">Volunteering</a>
+    <a href="#interests">Interests</a>
+  </nav>
+
   <header>
     <h1>Firdavs Zamirov</h1>
     <p>📍 Anna Utca 22, 7621 Pecs, Hungary</p>
     <p>📧 <a href="mailto:firdavszamirzoda@gmail.com">firdavszamirzoda@gmail.com</a> | 📞 (+36) 706 358 895</p>
-    <p>👤 Male | 🇹🇯 Tajik | Born 04/03/1998 in Rushon (Tajikistan)</p>
+    <p>👤 Male | 🇹🇯 Tajik | Born 04/03/1998 in Rushon, Tajikistan</p>
 
     <div class="social">
       <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://english.mik.pte.hu/student-tutor-scholarship" target="_blank"><i class="fa-solid fa-globe"></i></a>
+      <a href="https://english.mik.pte.hu/" target="_blank"><i class="fa-solid fa-globe"></i></a>
     </div>
 
     <a href="Firdavs_Zamirov_CV.pdf" class="download-btn" target="_blank">
-      <i class="fa-solid fa-file-arrow-down"></i> Download CV PDF
+      <i class="fa-solid fa-file-arrow-down"></i> Download CV PDF
     </a>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
-    <p>Motivated and detail‑oriented Business Analyst and Computer Science student passionate about data integrity, analytical thinking, and continuous learning. Experienced in mentorship and team collaboration.</p>
+    <p>Motivated and detail‑oriented Business Analyst and Computer Science student passionate about analytical thinking, data quality, and continuous learning. Experienced mentor and team player with strong communication skills.</p>
   </section>
 
-  <section>
+  <section id="experience">
     <h2>Experience</h2>
     <ul>
       <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
         <br><em>Business Analyst (14/08/2023 – Present)</em>
-        <br>Analytical thinking | Collaboration | Teamwork | Problem‑solving
+        <br>Analytical thinking | Problem Solving | Collaboration & Teamwork | Adaptability
       </li>
       <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
         <br><em>Data Entry Specialist (31/05/2020 – 04/04/2023)</em>
-        <br>Ensured data accuracy, quality and integrity across company systems.
+        <br>Ensured data accuracy and integrity through consistent updates and verification.
       </li>
     </ul>
   </section>
 
-  <section>
+  <section id="education">
     <h2>Education</h2>
     <ul>
-      <li><strong>BSc in Computer Science Engineering</strong> (09/2021 – 06/2025) – University of Pécs, Hungary | Software Development</li>
-      <li><strong>Lyceum for Gifted Students</strong> (06/2011 – 06/2016) – Natural Sciences & Mathematics | Final Grade 5.0/5.0</li>
+      <li><strong>BSc in Computer Science Engineering</strong> (09/2021 – 06/2025)
+        <br>University of Pecs, Hungary – Software & Application Development
+      </li>
+      <li><strong>Lyceum for Gifted Students</strong> (06/2011 – 06/2016)
+        <br>Dushanbe, Tajikistan – Natural Sciences | Grade 5.0/5.0
+      </li>
     </ul>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <ul>
       <li>Problem‑solving & Analytical Thinking</li>
@@ -160,33 +221,100 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Languages</h2>
-    <ul>
-      <li>Pamiri – Native</li>
-      <li>Tajik | English | Russian – C2</li>
-      <li>Persian – C1</li>
-      <li>Turkish – B2</li>
-      <li>German | Hungarian – A1</li>
-    </ul>
-  </section>
+<section id="languages">
+  <h2>Languages</h2>
+  <ul style="list-style:none; padding:0;">
+    <li>
+      <strong>Pamiri</strong> – Mother tongue  
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>Tajik</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>English</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>Russian</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>Persian</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:85%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>Turkish</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:70%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>German</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:35%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+    <li>
+      <strong>Hungarian</strong>  
+      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
+      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
+        <div style="width:35%; height:8px; background:#38bdf8; border-radius:4px;"></div>
+      </div>
+    </li>
+  </ul>
+</section>
 
-  <section>
+  <section id="volunteering">
     <h2>Volunteering & Hackathons</h2>
     <ul>
-      <li><strong>Stipendium Hungaricum Mentor Network</strong> (09/2022–05/2024) – Student Mentor, Pécs | Guided new students in academic and social integration.</li>
-      <li><strong>Student Tutor</strong> – C Language (09/2022–05/2023) | PTE‑MIK – Taught programming fundamentals.</li>
-      <li>Participated in: JunctionX Budapest (2022) • K&H HACK3 (2023) • Aalto Defence Hackathon (2025)</li>
+      <li><strong>Stipendium Hungaricum Mentor Network</strong> (09/2022–05/2024) – Student Mentor in Pécs | Guided new students in academic integration.</li>
+      <li><strong>Student Tutor</strong> – C Language (09/2022–05/2023) | PTE‑MIK – Taught programming basics and mentored student projects.</li>
+      <li>Hackathons: JunctionX Budapest (2022) • K&H HACK3 (2023) • Aalto Defence Hackathon (2025)</li>
     </ul>
   </section>
 
-  <section>
+  <section id="interests">
     <h2>Interests</h2>
-    <p>🏋️ Fitness • 🎨 Painting • 🍰 Cooking & Baking</p>
+    <p>🏋️ Fitness | 🎨 Painting | 🍰 Cooking & Baking</p>
   </section>
 
   <footer>
     <p>© 2024 Firdavs Zamirov | Made with ❤️ in Hungary</p>
   </footer>
+
+  <!-- 🔹 Scroll To Top Button -->
+  <button id="toTop" title="Go to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // Show/hide scroll button
+    const toTop = document.getElementById("toTop");
+    window.onscroll = () => {
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    };
+    // Scroll to top smoothly
+    toTop.addEventListener("click", () => window.scrollTo({top: 0, behavior: "smooth"}));
+  </script>
 </body>
 </html>
