@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firdavs Zamirov | CV</title>
+  <style>
+    :root {
+      --bg-color: #f9fafb;
+      --text-color: #111;
+      --accent-color: #0073e6;
+      --card-bg: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--card-bg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    header h1 {
+      margin-bottom: 0.3rem;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.2rem 0;
+      color: #555;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0f172a;
+        --text-color: #e2e8f0;
+        --card-bg: #1e293b;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Firdavs Zamirov</h1>
+    <p>📍 Anna Utca 22, 7621 Pecs, Hungary</p>
+    <p>📧 <a href="mailto:firdavszamirzoda@gmail.com">firdavszamirzoda@gmail.com</a> | 📞 (+36) 706 358 895</p>
+    <p>👤 Male | 🇹🇯 Tajikistan | Born 04/03/1998 in Rushon, Tajikistan</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Motivated and detail‑oriented Business Analyst and Computer Science student passionate about data integrity, analytical problem solving, and continuous learning. Experienced in teamwork, mentoring, and supporting academic success.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
+        <br /> <em>Business Analyst (14/08/2023 – Present)</em>
+        <br /> Analytical thinking, collaboration, adaptability, problem solving.
+      </li>
+      <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
+        <br /> <em>Data Entry Specialist (31/05/2020 – 04/04/2023)</em>
+        <br /> Maintained data accuracy in company systems and ensured quality integrity.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>BSc in Computer Science Engineering</strong> (09/2021 – 06/2025)<br />
+          University of Pecs, Hungary – Software and Applications Development.
+      </li>
+      <li><strong>Lyceum for Gifted Students</strong>, Dushanbe (Tajikistan) – Natural Sciences and Mathematics (06/2011 – 06/2016)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Problem‑solving & Analytical Thinking</li>
+      <li>Customer‑focused communication</li>
+      <li>Ownership & Accountability</li>
+      <li>Collaboration & Stakeholder Coordination</li>
+      <li>Stress Management & Adaptability</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <ul>
+      <li>Pamiri – Native</li>
+      <li>Tajik, English, Russian – C2</li>
+      <li>Persian – C1</li>
+      <li>Turkish – B2</li>
+      <li>German, Hungarian – A1</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Volunteering & Hackathons</h2>
+    <ul>
+      <li><strong>Stipendium Hungaricum Mentor Network</strong> (09/2022 – 05/2024) – Student Mentor in Pecs</li>
+      <li><strong>Student Tutor – C Language</strong>, PTE‑MIK (09/2022 – 05/2023)</li>
+      <li>Hackathons: JunctionX Budapest (2022), K&H HACK3 (2023), Aalto Defence Hackathon (2025)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Interests</h2>
+    <p>Fitness Workout • Painting • Cooking & Baking</p>
+  </section>
+
+  <footer>
+    <p>© 2024 Firdavs Zamirov | Made with ❤️ in Hungary</p>
+  </footer>
+</body>
+</html>
