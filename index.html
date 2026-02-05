@@ -6,309 +6,663 @@
   <title>Firdavs Zamirov | CV</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
-      --bg-color: #0f172a;
-      --text-color: #e2e8f0;
-      --accent-color: #38bdf8;
-      --card-bg: #1e293b;
+      --primary-dark: #0f172a;
+      --secondary-dark: #1e293b;
+      --tertiary-dark: #334155;
+      --accent-blue: #38bdf8;
+      --accent-cyan: #06b6d4;
+      --text-light: #e2e8f0;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --success: #10b981;
+      --border-color: #475569;
     }
 
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2942 100%);
+      color: var(--text-light);
+      line-height: 1.7;
       scroll-behavior: smooth;
+      min-height: 100vh;
     }
 
-    /* 🔹 NAVBAR */
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* NAVIGATION */
+    /* ═══════════════════════════════════════════════════════════════ */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 0.8rem 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      gap: 2.5rem;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       z-index: 1000;
-    }
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent-color);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
     }
 
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-blue);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* HEADER / HERO SECTION */
+    /* ═══════════════════════════════════════════════════════════════ */
     header {
       text-align: center;
-      padding: 6rem 1rem 3rem;
-      background: var(--card-bg);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     header h1 {
-      margin-bottom: 0.3rem;
-      font-size: 2rem;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -1px;
+      position: relative;
+      z-index: 1;
     }
 
-    header p {
-      margin: 0.2rem 0;
-      color: #cbd5e1;
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-item a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent-cyan);
     }
 
     .social {
-      margin-top: 1rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
+
     .social a {
-      color: var(--accent-color);
-      margin: 0 8px;
-      font-size: 1.3rem;
-      transition: 0.3s;
-      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 2px solid var(--accent-blue);
+      border-radius: 50%;
+      color: var(--accent-blue);
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
     }
+
     .social a:hover {
-      color: white;
+      background: var(--accent-blue);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
     }
 
-    .download-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--accent-color);
-      color: #0f172a;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .download-btn:hover {
-      background: #7dd3fc;
-    }
-
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SECTIONS */
+    /* ═══════════════════════════════════════════════════════════════ */
     section {
-      max-width: 900px;
+      max-width: 950px;
       margin: 3rem auto;
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 12px 40px rgba(56, 189, 248, 0.1);
     }
 
     h2 {
-      color: var(--accent-color);
-      border-bottom: 2px solid var(--accent-color);
-      display: inline-block;
-      margin-bottom: 1rem;
+      color: var(--accent-blue);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding-bottom: 1rem;
     }
 
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      border-radius: 2px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 100%);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* LISTS & ITEMS */
+    /* ═══════════════════════════════════════════════════════════════ */
     ul {
       list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 0.6rem;
+      padding: 0;
     }
 
+    li {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    li:hover {
+      padding-left: 2.5rem;
+      color: var(--accent-blue);
+    }
+
+    strong {
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    em {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* ABOUT SECTION */
+    /* ═══════════════════════════════════════════════════════════════ */
+    #about p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* LANGUAGES SECTION */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .language-item {
+      margin-bottom: 1.8rem;
+      padding-left: 0;
+    }
+
+    .language-item::before {
+      display: none;
+    }
+
+    .language-name {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .language-icon {
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+    }
+
+    .language-bar {
+      height: 6px;
+      background: rgba(51, 65, 85, 0.6);
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .language-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      border-radius: 3px;
+      transition: width 0.6s ease;
+    }
+
+    .language-item:hover .language-progress {
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* FOOTER */
+    /* ═══════════════════════════════════════════════════════════════ */
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: var(--text-dim);
+      border-top: 1px solid rgba(56, 189, 248, 0.1);
+      margin-top: 4rem;
     }
 
     a {
-      color: var(--accent-color);
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    /* 🔹 SCROLL TO TOP BUTTON */
+    a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCROLL TO TOP BUTTON */
+    /* ═══════════════════════════════════════════════════════════════ */
     #toTop {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background: var(--accent-color);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
       border: none;
-      color: #0f172a;
-      padding: 10px 14px;
+      color: var(--primary-dark);
       border-radius: 50%;
       font-size: 1.2rem;
       cursor: pointer;
       display: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transition: 0.3s;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+      transition: all 0.3s ease;
       z-index: 999;
+      font-weight: bold;
     }
+
     #toTop:hover {
-      background: #7dd3fc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.6);
+    }
+
+    #toTop:active {
+      transform: translateY(-1px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* RESPONSIVE DESIGN */
+    /* ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      nav {
+        gap: 1rem;
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      header {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+      }
+
+      .contact-info {
+        gap: 1rem;
+        flex-direction: column;
+      }
+
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      li {
+        padding-left: 1.5rem;
+      }
+
+      li:hover {
+        padding-left: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        gap: 0.8rem;
+        padding: 0.6rem 0.8rem;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+      }
+
+      .social {
+        gap: 1rem;
+      }
+
+      .social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 1.5rem 0.8rem;
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .contact-item {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔹 TOP NAVIGATION -->
+  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
+    <a href="#experience">Work Experience</a>
     <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#languages">Languages</a>
+    <a href="#skills">Soft Skills</a>
     <a href="#volunteering">Volunteering</a>
-    <a href="#interests">Interests</a>
+    <a href="#languages">Languages</a>
+    <a href="#interests">Hobbies & Interests</a>
   </nav>
 
+  <!-- HEADER / HERO -->
   <header>
-    <h1>Firdavs Zamirov</h1>
-    <p>📍 Anna Utca 22, 7621 Pecs, Hungary</p>
-    <p>📧 <a href="mailto:firdavszamirzoda@gmail.com">firdavszamirzoda@gmail.com</a> | 📞 (+36) 706 358 895</p>
-    <p>👤 Male | 🇹🇯 Tajik | Born 04/03/1998 in Rushon, Tajikistan</p>
-
-    <div class="social">
-      <a href="https://www.linkedin.com/in/firdavszamirov/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/firdavszamirov" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://english.mik.pte.hu/" target="_blank"><i class="fa-solid fa-globe"></i></a>
+    <h1>Firdavs Zamirov</h1>    
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Pécs, Hungary</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:firdavszamirzoda@gmail.com">firdavszamirzoda@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>(+36) 706 358 895</span>
+      </div>
     </div>
 
-    <a href="firdavs_zamirov_cv.pdf" class="download-btn" target="_blank">
-      <i class="fa-solid fa-file-arrow-down"></i> Download CV PDF
-    </a>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/firdavszamirov/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/firdavszamirov" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://english.mik.pte.hu/" target="_blank" title="University">
+        <i class="fas fa-globe"></i>
+      </a>
+    </div>
   </header>
 
+  <!-- ABOUT SECTION -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>Motivated and detail‑oriented Business Analyst and Computer Science student passionate about analytical thinking, data quality, and continuous learning. Experienced mentor and team player with strong communication skills.</p>
+    <h2>About Me</h2>
+    <p>BSc Computer Science Engineering graduate and TCRT Analyst with strong programming skills and hands-on leadership experience. Experienced in incident response, system monitoring, and root cause analysis (RCA), with proficiency in Python, SQL, and scripting for analysis and automation. Led and coordinated a technical response team, managing incident triage, task assignment, and cross-functional communication to ensure resolution within SLA targets. Strong problem-solving, documentation, and stakeholder communication skills.</p>
   </section>
 
+  <!-- WORK EXPERIENCE SECTION -->
   <section id="experience">
-    <h2>Experience</h2>
+    <h2>Work Experience</h2>
     <ul>
-      <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
-        <br><em>Business Analyst (14/08/2023 – Present)</em>
-        <br>Analytical thinking | Problem Solving | Collaboration & Teamwork | Adaptability
-      </li>
-      <li><strong>dōTERRA Europe Services</strong> – Remote (Hungary)
-        <br><em>Data Entry Specialist (31/05/2020 – 04/04/2023)</em>
-        <br>Ensured data accuracy and integrity through consistent updates and verification.
+      <li>
+        <strong>dōTERRA Europe Services</strong> - Remote, Hungary
+        <br><em>TCRT Analyst (Aug 2023 - Present)</em>
+        <br>Incident & Response • Systems & Monitoring • Technical Tools • Documentation & Communication
+      <li>
+        <strong>DAI Global</strong> - Remote, Tajikistan
+        <br><em>Data Entry Specialist (May 2019 - Apr 2023)</em>
+        <br>Data Management & Software • Data Handling & Accuracy • Tools & Systems • Automation & Basic Programming
       </li>
     </ul>
   </section>
 
+  <!-- EDUCATION SECTION -->
   <section id="education">
     <h2>Education</h2>
     <ul>
-      <li><strong>BSc in Computer Science Engineering</strong> (09/2021 – 06/2025)
-        <br>University of Pecs, Hungary – Software & Application Development
+      <li>
+        <strong>BSc in Computer Science Engineering</strong>
+        <br><em>University of Pecs, Hungary (2021 - 2025)</em>
+        <br>Application developent | Faculty of Engineering and Information Technology
       </li>
-      <li><strong>Lyceum for Gifted Students</strong> (06/2011 – 06/2016)
-        <br>Dushanbe, Tajikistan – Natural Sciences | Grade 5.0/5.0
+      <li>
+        <strong>High School Diploma</strong>
+        <br><em>Lyceum for Gifted Students, Dushanbe (2011 - 2016)</em>
+        <br>Natural Sciences, Mathematics & Statistics
       </li>
     </ul>
   </section>
 
+  <!-- SOFT SKILLS SECTION -->
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Soft Skills</h2>
     <ul>
-      <li>Problem‑solving & Analytical Thinking</li>
-      <li>Customer‑focused Communication</li>
-      <li>Ownership & Accountability</li>
-      <li>Collaboration & Stakeholder Coordination</li>
-      <li>Stress Management & Adaptability</li>
+      <li>Problem-solving & Analytical Thinking</li>
+      <li>Customer-focused Communication</li>
+      <li>Ownership & Accountability</li>
+      <li>Collaboration & Stakeholder Coordination</li>
+      <li>Stress Management & Adaptability</li>
+      <li>Data Quality & Integrity Management</li>
     </ul>
   </section>
-
-<section id="languages">
-  <h2>Languages</h2>
-  <ul style="list-style:none; padding:0;">
-    <li>
-      <strong>Pamiri</strong> – Mother tongue  
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>Tajik</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>English</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>Russian</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:100%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>Persian</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:85%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>Turkish</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:70%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>German</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:35%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-    <li>
-      <strong>Hungarian</strong>  
-      <i class="fa-solid fa-language" style="color:#38bdf8;"></i>
-      <div style="height:8px; background:#334155; border-radius:4px; margin-top:4px;">
-        <div style="width:35%; height:8px; background:#38bdf8; border-radius:4px;"></div>
-      </div>
-    </li>
-  </ul>
-</section>
 
   <section id="volunteering">
-    <h2>Volunteering & Hackathons</h2>
+    <h2>Volunteering</h2>
+    <div class="experience-item">
+      <strong><a href="https://shmentor.hu/" target="_blank">Student Mentor at Stipendium Hungaricum Mentor Network</a></strong>
+      <em>Sep 2022 - May 2024 • Pecs, Hungary</em>
+      <ul style="margin-top: 0.8rem; padding-left: 1.5rem;">
+        <li style="padding-left: 1.5rem; margin-bottom: 0.5rem;">Mentored and supported students in academic development and university integration</li>
+        <li style="padding-left: 1.5rem; margin-bottom: 0.5rem;">Provided guidance on study strategies, time management, and exam preparation</li>
+        <li style="padding-left: 1.5rem; margin-bottom: 0.5rem;">Assisted students in navigating university systems, resources, and requirements</li>
+      </ul>
+    </div>
+    </section>
+
+  <!-- LANGUAGES SECTION -->
+  <section id="languages">
+    <h2>Languages</h2>
     <ul>
-      <li><strong>Stipendium Hungaricum Mentor Network</strong> (09/2022–05/2024) – Student Mentor in Pécs | Guided new students in academic integration.</li>
-      <li><strong>Student Tutor</strong> – C Language (09/2022–05/2023) | PTE‑MIK – Taught programming basics and mentored student projects.</li>
-      <li>Hackathons: JunctionX Budapest (2022) • K&H HACK3 (2023) • Aalto Defence Hackathon (2025)</li>
+      <li class="language-item">
+        <div class="language-name">
+          <strong>Tajik</strong>
+          <span style="color: var(--text-dim); font-size: 0.85rem; font-weight: normal; margin-left: auto;">Native</span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 100%;"></div>
+        </div>
+      </li>
+      <li class="language-item">
+        <div class="language-name">
+          <strong>English</strong>
+          <span style="color: var(--text-dim); font-size: 0s.85rem; font-weight: normal; margin-left: auto;"></span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 90%;"></div>
+        </div>
+      </li>
+      <li class="language-item">
+        <div class="language-name">
+          <strong>Russian</strong>
+          <span style="color: var(--text-dim); font-size: 0.85rem; font-weight: normal; margin-left: auto;"></span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 90%;"></div>
+        </div>
+      </li>
+        <li class="language-item">
+            <div class="language-name">
+            <strong>Turkish</strong>
+            <span style="color: var(--text-dim); font-size: 0.85rem; font-weight: normal; margin-left: auto;"></span>
+            </div>
+            <div class="language-bar">
+            <div class="language-progress" style="width: 60%;"></div>
+            </div>
+        </li>
+        <li class="language-item">
+            <div class="language-name">
+            <strong>Hungarian</strong>
+            <span style="color: var(--text-dim); font-size: 0.85rem; font-weight: normal; margin-left: auto;"></span>
+            </div>
+            <div class="language-bar">
+            <div class="language-progress" style="width: 20%;"></div>
+            </div>
+        </li>  
+      </ul>
+    </section>
+    
+      <!-- HOBBIES & INTERESTS SECTION -->
+  <section id="interests">
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li><i class="fas fa-dumbbell" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i>Fitness Workout</li>
+      <li><i class="fas fa-book" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i>Reading Books</li>
+      <li><i class="fas fa-utensils" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i>Cooking & Baking</li>
     </ul>
   </section>
 
-  <section id="interests">
-    <h2>Interests</h2>
-    <p>🏋️ Fitness | 🎨 Painting | 🍰 Cooking & Baking</p>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Firdavs Zamirov | Made with ❤️ in Hungary</p>
+    <p>© 2026 Firdavs Zamirov | Made with <span style="color: #ef4444;">❤</span> in Hungary</p>
   </footer>
 
-  <!-- 🔹 Scroll To Top Button -->
-  <button id="toTop" title="Go to top"><i class="fa-solid fa-chevron-up"></i></button>
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="toTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
   <script>
     // Show/hide scroll button
     const toTop = document.getElementById("toTop");
     window.onscroll = () => {
       if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        toTop.style.display = "block";
+        toTop.style.display = "flex";
       } else {
         toTop.style.display = "none";
       }
